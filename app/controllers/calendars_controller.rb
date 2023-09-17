@@ -21,12 +21,10 @@ class CalendarsController < ApplicationController
 
   def getweek
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
- 
-  
     # Dateオブジェクトは、日付を保持しています。下記のように`.today.day`とすると、今日の日付を取得できます。
     @todays_date = Date.today
 
-    # 例) 今日が2月1日の場f合・・・ Date.today.day => 1日
+    # 例)今日が2月1日の場f合・・・ Date.today.day => 1日
     @week_days = []
 
     plans = Plan.where(date: @todays_date..@todays_date + 6)
